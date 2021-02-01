@@ -3,8 +3,8 @@ module.exports = {
   development: {
     username: process.env.DB_USER,
     password: process.env.DB_PW,
-    database: "travel_db",
-    host: "127.0.0.1",
+    database: "o88phcvxkd4jboo6",
+    host: "z5zm8hebixwywy9d.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     dialect: "mysql",
   },
   test: {

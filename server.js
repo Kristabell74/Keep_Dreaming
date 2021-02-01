@@ -5,18 +5,19 @@ const app = express();
 const exphbs = require("express-handlebars");
 const mysql = require("mysql");
 
-//do i move this to config.js
-//does this hide my credentials somehow?
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  connection = mysql.createConnection({
-    host: "localhost",
-    user: process.env.DB_USER,
-    password: process.env.DB_PW,
-    database: "travel_db",
-  });
-}
+// if (process.env.JAWSDB_URL) {
+//   connection = mysql.createConnection(process.env.JAWSDB_URL);
+//   db.sequelize.sync().then(() => {
+//     app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
+//   });
+// } else {
+//   connection = mysql.createConnection({
+//     host: "z5zm8hebixwywy9d.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PW,
+//     database: "o88phcvxkd4jboo6",
+//   });
+// }
 
 const PORT = process.env.PORT || 8080;
 

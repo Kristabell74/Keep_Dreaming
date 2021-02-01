@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const budget1 = parseInt(selection[0].substring(2, selection[0].length));
     selection[1] = selection[1].toLowerCase();
 
-    let queryUrl = `/api/destinations/${budget1}/${selection[1]}/${selection[2]}`
+    let queryUrl = `/api/destinations/${budget1}/${selection[1]}/${selection[2]}`;
     fetch(queryUrl, {
       method: "GET",
       headers: {
@@ -95,37 +95,37 @@ document.addEventListener("DOMContentLoaded", (event) => {
       .catch((err) => console.error(err));
   }
 
-  const submitButton = document.getElementById("submit");
-  submitButton.addEventListener("click", (event) => {
-    event.preventDefault();
+  // const submitButton = document.getElementById("submit");
+  // submitButton.addEventListener("click", (event) => {
+  //   event.preventDefault();
 
-    const newUser = {
-      username: document.getElementById("userName").value.trim(),
-      email: document.getElementById("email").value.trim(),
-      //this is icebox functionality to get the users saved destinations info to show on for that user
-      // location: document.getElementById("locationItem").getatrribute("data-item-location"),
-      // location: document.getElementById("costItem").getatrribute("data-item-cost"),
-      // location: document.getElementById("genreItem").getatrribute("data-item-genre"),
-      // location: document.getElementById("typeItem").getatrribute("data-item-type"),
-      // location: document.getElementById("kidFriendlyItem").getatrribute("data-item-kidFriendly")
-    };
+  //   const newUser = {
+  //     username: document.getElementById("userName").value.trim(),
+  //     email: document.getElementById("email").value.trim(),
+  //     //this is icebox functionality to get the users saved destinations info to show on for that user
+  //     // location: document.getElementById("locationItem").getatrribute("data-item-location"),
+  //     // location: document.getElementById("costItem").getatrribute("data-item-cost"),
+  //     // location: document.getElementById("genreItem").getatrribute("data-item-genre"),
+  //     // location: document.getElementById("typeItem").getatrribute("data-item-type"),
+  //     // location: document.getElementById("kidFriendlyItem").getatrribute("data-item-kidFriendly")
+  //   };
 
-    //post routw to save the user, emai, and returned location info from DB
-    fetch("/api/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newUser),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      });
-    //clears out form after user input is submitted 
-    document.getElementById("userName").value = "";
-    document.getElementById("email").value = "";
-  });
+  //   //post routw to save the user, emai, and returned location info from DB
+  //   fetch("/api/users", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(newUser),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //     });
+  //   //clears out form after user input is submitted
+  //   document.getElementById("userName").value = "";
+  //   document.getElementById("email").value = "";
+  // });
 
   init();
 });
